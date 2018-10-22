@@ -1,4 +1,4 @@
-# PHBS_MLF_2018
+# Grayscale coloring
 
 Course project of [Machine Learning for Finance](https://github.com/PHBS/2018.M1.MLF) at [PHBS](http://english.phbs.pku.edu.cn/). This project aims to colorize gray pictures. The
 repository is where we develop algorithms. We welcome contributions if you are interested in our
@@ -24,7 +24,11 @@ colorful picture to a gray one attracts attentions in algorithm research. This p
 intends to color a gray picture, i.e., regain the original image. We try to map gray scale to RGB
 colors acorrding to gray scale distribution. In this way, colorful pictures contains more
 information (such as RGB pixels), thus contributing to better recognition. Also, we can apply this
-colorization model to repair old pictures.
+colorization model to repair old pictures. Here is the comparison of gray and RGB (colorful) image.
+
+Gray  | RGB
+---|---
+![Gray picture](./test/example_Gray.jpg) | ![RGB picture](./test/example_RGB.jpg)
 
 ## Data and preprocessing
 
