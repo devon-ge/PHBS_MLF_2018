@@ -34,7 +34,7 @@ We obtian images of natural landscape by a crawler program. In preprocessing, we
 
 1. Compress all sample images into size of 224 by 224. The standardization saves computation power and facilitates following algorithm.
 
-:)|Raw | Compressed (width=256 px)
+:)|Raw | Compressed (width=224 px)
 ---|---|---
 Gray|![Raw picture](./test/example_Gray.jpg) | ![Compressed picture](./test/com_example_Gray.jpg)
 RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_example_RGB.jpg)
@@ -45,11 +45,11 @@ RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_ex
 
 ## Neural network training
 
-The architecture of the convolutional neural network consists of two major parts: 
-1) The first part consists of a low-level feature extraction network, an intermediate feature extraction network, a fusion layer and a coloring network; 
-2) The second part consists of a low-level feature extraction network and a global feature extraction network. 
+The architecture of the convolutional neural network consists of two major parts:
+1) The first part consists of a low-level feature extraction network, an intermediate feature extraction network, a fusion layer and a coloring network;
+2) The second part consists of a low-level feature extraction network and a global feature extraction network.
 Input grayscale images and use the convolutional neural network to train the model. Loss function is
 
-![image](https://github.com/devon-ge/PHBS_MLF_2018/blob/master/test/equation.gif)
+![image](./test/equation.gif)
 
 The first half of the above function is the unsupervised network loss function, and the second half is the classification part loss. If Alpha=0, only the color loss is considered.
