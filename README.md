@@ -29,12 +29,12 @@ colorization model to repair old pictures.
 ## Data and preprocessing
 
 The model receives gray pictures as input. To reduce the computation, we first lower the resolution
-ration by compression.
+ration by compression. Obtain a natural landscape photo from the crawler program.
 
-1. Convert all sample images of image training set and test set into H=256 image by compression algorithm (because of limited computation and standardization processing, follow-up algorithm can be used)
+1. Convert all sample images into H=256 images by compression algorithm (Because of limited computation and standardization processing, follow-up algorithm can be used)
 
-2. Obtain a natural landscape photo from the crawler code and convert the color channel from RGB to Lab.
+2. Convert the color channel of the images from RGB to Lab (Lab contains grayscale and two color channels, which is convenience to process and train).
 
-3. The image is converted into a grayscale image and a Lab color map as a training set, and the test set selects a plurality of grayscale images.
+3. Images are divided into test sets and training sets according to a certain proportion.
 
 ## Result
