@@ -4,7 +4,7 @@ Course project of [Machine Learning for Finance](https://github.com/PHBS/2018.M1
 repository is where we develop algorithms. We welcome contributions if you are interested in our
 project. For example, you can:
 
-* [Submit bugs or issues](https://github.com/devon-ge/PHBS_MLF_2018/issues) to improve the performance of our model.
+* [Submit bugs or issues](https://a/devon-ge/PHBS_MLF_2018/issues) to improve the performance of our model.
 * [File pull requests](https://github.com/devon-ge/PHBS_MLF_2018/pulls) if you have better ideas.
 
 ## Team Members
@@ -20,7 +20,7 @@ With the popularity of machine learning, a variety of applications are hoping to
 both our lives and jobs. The state-of-the-art machine learning methods in pattern recognition
 enable humans to find the intrinsic relationship of things. For example, image recognition often
 compares the gray scale of scanned picture with dataset for identificaiton. How to transform a
-colorful picture to a grayscale one attracts attentions in algorithm research. This project 
+colorful picture to a grayscale one attracts attentions in algorithm research. This project
 intends to colorize a grayscale picture, i.e., regain the original image. We try to map grayscale to RGB
 colors acorrding to gray scale distribution. Colorful pictures contains more
 information (such as RGB pixels), thus contributing to better recognition. Also, we can apply this
@@ -43,9 +43,9 @@ RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_ex
 
 ## Neural metwork training
 
-The architecture of the convolutional neural network consists of two major parts: 
-1) The first part consists of a low-level feature extraction network, an intermediate feature extraction network, a fusion layer and a coloring network; 
-2) the second part consists of a low-level feature extraction network and a global feature extraction network. 
+The architecture of the convolutional neural network consists of two major parts:
+1) The first part consists of a low-level feature extraction network, an intermediate feature extraction network, a fusion layer and a coloring network;
+2) the second part consists of a low-level feature extraction network and a global feature extraction network.
 Input the gray images and using the convolutional neural network to train the model, loss function is as followed.
 
 $L(y^{color},y^{class})=|y^{color}-y^{color,*}|^{2}_{FRO}-\alpha(y^{class}-log(\sum_{i=0}^{N}exp(y_i^{class})))$
