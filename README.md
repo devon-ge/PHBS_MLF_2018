@@ -26,6 +26,8 @@ colors acorrding to gray scale distribution. In this way, colorful pictures cont
 information (such as RGB pixels), thus contributing to better recognition. Also, we can apply this
 colorization model to repair old pictures.
 
+![image](https://github.com/devon-ge/PHBS_MLF_2018/blob/master/test/liucheng.png)
+
 ## Data and preprocessing
 
 The model receives gray pictures as input. To reduce the computation, we first lower the resolution
