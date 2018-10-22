@@ -48,8 +48,7 @@ The architecture of the convolutional neural network consists of two major parts
 2) the second part consists of a low-level feature extraction network and a global feature extraction network. 
 Input the gray images and using the convolutional neural network to train the model, loss function is as followed.
 
-[Raw picture]
-(./test/equation.gif)
+![image](https://github.com/devon-ge/PHBS_MLF_2018/blob/master/test/equation.gif)
 
 The first half of the above function is the unsupervised network loss function, and the second half is the classification part loss. If Alpha=0, only the color loss is considered.
 
