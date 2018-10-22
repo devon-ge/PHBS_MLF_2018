@@ -4,7 +4,7 @@ Course project of [Machine Learning for Finance](https://github.com/PHBS/2018.M1
 repository is where we develop algorithms. We welcome contributions if you are interested in our
 project. For example, you can:
 
-* [Submit bugs or issues](https://a/devon-ge/PHBS_MLF_2018/issues) to improve the performance of our model.
+* [Submit bugs or issues](https://github.com/devon-ge/PHBS_MLF_2018/issues) to improve the performance of our model.
 * [File pull requests](https://github.com/devon-ge/PHBS_MLF_2018/pulls) if you have better ideas.
 
 ## Team Members
