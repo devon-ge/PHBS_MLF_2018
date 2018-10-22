@@ -1,3 +1,4 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 # Grayscale coloring
 
 Course project of [Machine Learning for Finance](https://github.com/PHBS/2018.M1.MLF) at [PHBS](http://english.phbs.pku.edu.cn/). This project aims to colorize gray pictures. The
@@ -48,8 +49,7 @@ The architecture of the convolutional neural network consists of two major parts
 2) the second part consists of a low-level feature extraction network and a global feature extraction network. 
 Input the gray images and using the convolutional neural network to train the model, loss function is as followed.
 
-
-<img src="http://chart.googleapis.com/chart?cht=tx&chl= $$L(y^{color},y^{class})=|y^{color}-y^{color,*}|^{2}_{FRO}-\alpha(y^{class}-log(\sum_{i=0}^{N}exp(y_i^{class})))$$" style="border:none;">
+$L(y^{color},y^{class})=|y^{color}-y^{color,*}|^{2}_{FRO}-\alpha(y^{class}-log(\sum_{i=0}^{N}exp(y_i^{class})))$
 
 The first half of the above function is the unsupervised network loss function, and the second half is the classification part loss. If Alpha=0, only the color loss is considered.
 
