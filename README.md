@@ -40,3 +40,14 @@ RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_ex
 2. Convert the color channel of images from RGB to Lab. In Lab format, L is lightness, ranging from 0(black) to 100(white), a is the green/red channel, ranging from -128 to 127, and b is the blue/yellow channel, ranging from -128 to 127. The conversion from RGB to Lab is invertible. It is easier to train two color channels in Lab than three channels in RGB, and a and b are uncorrelated.
 
 3. Images are divided into test sets and training sets by a certain proportion.
+
+## Neural metwork training
+
+The architecture of the convolutional neural network consists of two major parts: 
+1) The first part consists of a low-level feature extraction network, an intermediate feature extraction network, a fusion layer and a coloring network; 
+2) the second part consists of a low-level feature extraction network and a global feature extraction network. 
+Input the gray images and using the convolutional neural network to train the model, loss function is as followed.
+
+$L(y^{color},y^{class})=|y^{color}-y^{color,*}|^{2}_{FRO}-\alpha(y^{class}-log(\sum_{i=0}^{N}exp(y_i^{class})))$
+
+The first half of the above function is the unsupervised network loss function, and the second half is the classification part loss. If Alpha=0, only the color loss is considered.
