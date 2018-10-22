@@ -31,9 +31,9 @@ colorization model to repair old pictures.
 The model receives gray pictures as input. To reduce the computation, we first lower the resolution
 ration by compression. Obtain a natural landscape photo from the crawler program.
 
-1. Convert all sample images into 256-px-width images by compression algorithm (Because of limited computation and standardization processing, follow-up algorithm can be used)
+1. Convert all sample images into 224-px-width images by compression algorithm (Because of limited computation and standardization processing, follow-up algorithm can be used)
 
-:)|Raw | Compressed (width=256 px)
+:)|Raw | Compressed (width=224 px)
 ---|---|---
 Gray|![Raw picture](./test/example_Gray.jpg) | ![Compressed picture](./test/com_example_Gray.jpg)
 RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_example_RGB.jpg)
@@ -48,7 +48,8 @@ The architecture of the convolutional neural network consists of two major parts
 2) the second part consists of a low-level feature extraction network and a global feature extraction network. 
 Input the gray images and using the convolutional neural network to train the model, loss function is as followed.
 
-[Compressed picture](./test/equation.gif)
+[Raw picture]
+(./test/equation.gif)
 
 The first half of the above function is the unsupervised network loss function, and the second half is the classification part loss. If Alpha=0, only the color loss is considered.
 
