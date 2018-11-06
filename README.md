@@ -36,9 +36,9 @@ We obtian images of natural landscape by a spider. The pictures are classified b
 
 Spider for this project are implemented under the [`Scrapy`](https://scrapy.org/) framework. Roughly speaking, a `Scrapy` project is nothing but a folder that contains auto-generated files (incluing `items.py`, `middlewares.py`, `pipelines.py` and `settings.py` under `PROJECT_NAME` folder, and spider(s) under `spiders` folder).
 
-Among these, we mainly config in `items.py` and `settings.py`. [`items.py`](tooopen_img\tooopen_img\items.py) confines the crawling field (the spider only extract fields defined in this file). [`settings.py`](tooopen_img\tooopen_img\settings.py) contains project-specific configurations. More info on [Scrapy tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)
+Among these, we mainly config in `items.py` and `settings.py`. [`items.py`](tooopen_img/tooopen_img/items.py) confines the crawling field (the spider only extract fields defined in this file). [`settings.py`](tooopen_img/tooopen_img/settings.py) contains project-specific configurations. More info on [Scrapy tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)
 
-Pictures are crawled by the spider [`tooopen`](tooopen_img\tooopen_img\spiders\tooopen.py
+Pictures are crawled by the spider [`tooopen`](tooopen_img/tooopen_img/spiders/tooopen.py
 ) from the [nature category of **Toopen**](http://www.tooopen.com/img/87.aspx) (A website that posts categorized pictures). All pictures are name by the SHA1 hash of its url and stored in [`images/full`](../images/full) directory (default of `Scrapy`).
 
 To reproduce the crawling, just clone this repository and run spider `tooopen` and run `Scrapy` command in terminal.
