@@ -31,6 +31,7 @@ colorization algorithm to repair old pictures.
 ## Data and preprocessing
 
 We obtian images of natural landscape by a spider. The pictures are classified by principal components analysis (PCA). convert original images to standardized 256 by 256 Lab images. The model receives colorful images and load them in grayscale. The neuron network then trains paired samples.the input, and output colorized images.
+We use PCA score of RGB to represent each picture and then use k-means to cluster those images. Each time we will pick one group to create the trainning and test set. Thus make sure trainning and test images are similar to a certain degree without the extra effort of classification by human.
 
 ### Images spider
 
