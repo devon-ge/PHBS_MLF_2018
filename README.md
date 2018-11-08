@@ -90,35 +90,24 @@ RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_ex
 
 ### CNN topological structures
 
- 
-  
-  
-
-
-
-
-
-
 ### Build CNN model based on Keras
 
-
-* The picture below shows the process of some popular optimizers intuitively. (eg. SGD, Momentum, NAG, Adagrad, Adadelta, Rmsprop) 
+* The picture below shows the process of some popular optimizers intuitively. (eg. SGD, Momentum, NAG, Adagrad, Adadelta, Rmsprop)
 * In our model, we use Rmsprop method ,which is an adaptive learning rate method and proposed by Geoff Hinton.
-
 
 ![example1](./test/optimizer.gif)
 
 ### Result
 
-After we train the model, the following pictures shows the colorizing result of different train times. As the 
+After we train the model, the following pictures shows the colorizing result of different train times. As the
 
-:octocat:|1|2|3|4|5|6|7|8|9
+:octocat:|1|2|3|4|5|6|7|8|9|10
 ---|---|---|---|---|---|---|---|---|---|---
 Gray|![1](./Gray2Lab/result_gray/img_0.png) |![2](./Gray2Lab/result_gray/img_1.png)|![3](./Gray2Lab/result_gray/img_2.png)|![4](./Gray2Lab/result_gray/img_3.png)|![1](./Gray2Lab/result_gray/img_4.png)|![1](./Gray2Lab/result_gray/img_5.png)|![1](./Gray2Lab/result_gray/img_6.png)|![1](./Gray2Lab/result_gray/img_7.png)|![1](./Gray2Lab/result_gray/img_8.png)|![1](./Gray2Lab/result_gray/img_9.png)
 RGB (50 times)|![1](./Gray2Lab/result_50_times/img_0.png) |![2](./Gray2Lab/result_50_times/img_1.png)|![3](./Gray2Lab/result_50_times/img_2.png)|![4](./Gray2Lab/result_50_times/img_3.png)|![1](./Gray2Lab/result_50_times/img_4.png)|![1](./Gray2Lab/result_50_times/img_5.png)|![1](./Gray2Lab/result_50_times/img_6.png)|![1](./Gray2Lab/result_50_times/img_7.png)|![1](./Gray2Lab/result_50_times/img_8.png)|![1](./Gray2Lab/result_50_times/img_9.png)
-RGB (1000 times)|![1](./Gray2Lab/result_50_times/img_0.png) |![2](./Gray2Lab/result_50_times/img_1.png)|![3](./Gray2Lab/result_50_times/img_2.png)|![4](./Gray2Lab/result_50_times/img_3.png)|![1](./Gray2Lab/result_50_times/img_4.png)|![1](./Gray2Lab/result_50_times/img_5.png)|![1](./Gray2Lab/result_50_times/img_6.png)|![1](./Gray2Lab/result_50_times/img_7.png)|![1](./Gray2Lab/result_50_times/img_8.png)|![1](./Gray2Lab/result_50_times/img_9.png)
+RGB (1000 times)|![1](./Gray2Lab/result_rgb/img_0.png) |![2](./Gray2Lab/result_rgb/img_1.png)|![3](./Gray2Lab/result_rgb/img_2.png)|![4](./Gray2Lab/result_rgb/img_3.png)|![1](./Gray2Lab/result_rgb/img_4.png)|![1](./Gray2Lab/result_rgb/img_5.png)|![1](./Gray2Lab/result_rgb/img_6.png)|![1](./Gray2Lab/result_rgb/img_7.png)|![1](./Gray2Lab/result_rgb/img_8.png)|![1](./Gray2Lab/result_rgb/img_9.png)
 
-## Improvement in the future 
+## Improvement in the future
 
 1) The performance of classfier can be improved in the future, more high quality samples and training times will improve the performance. Using the classify network trained by google is a potential way to improve.
 
