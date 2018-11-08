@@ -88,11 +88,40 @@ RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_ex
 
 ## Neural network training
 
-The architecture of the convolutional neural network consists of two major parts:
-1) The first part consists of a low-level feature extraction network, an intermediate feature extraction network, a fusion layer and a coloring network;
-2) The second part consists of a low-level feature extraction network and a global feature extraction network.
-Input grayscale images and use the convolutional neural network to train the model. Loss function is
+### CNN topological structures
 
-![image](./test/equation.gif)
+ 
+  
+  
 
-The first half of the above function is the unsupervised network loss function, and the second half is the classification part loss. If Alpha=0, only the color loss is considered.
+
+
+
+
+
+### Build CNN model based on Keras
+
+
+* The picture below shows the process of some popular optimizers intuitively. (eg. SGD, Momentum, NAG, Adagrad, Adadelta, Rmsprop) 
+* In our model, we use Rmsprop method ,which is an adaptive learning rate method and proposed by Geoff Hinton.
+
+
+![example1](./test/optimizer.gif)
+
+### Result
+
+After we train the model, the following pictures shows the colorizing result of different train times. As the 
+
+:octocat:|1|2|3|4|5|6|7|8|9
+---|---|---|---|---|---|---|---|---|---|---
+Gray|![1](./Gray2Lab/result_gray/img_0.png) |![2](./Gray2Lab/result_gray/img_1.png)|![3](./Gray2Lab/result_gray/img_2.png)|![4](./Gray2Lab/result_gray/img_3.png)|![1](./Gray2Lab/result_gray/img_4.png)|![1](./Gray2Lab/result_gray/img_5.png)|![1](./Gray2Lab/result_gray/img_6.png)|![1](./Gray2Lab/result_gray/img_7.png)|![1](./Gray2Lab/result_gray/img_8.png)|![1](./Gray2Lab/result_gray/img_9.png)
+RGB (50 times)|![1](./Gray2Lab/result_50_times/img_0.png) |![2](./Gray2Lab/result_50_times/img_1.png)|![3](./Gray2Lab/result_50_times/img_2.png)|![4](./Gray2Lab/result_50_times/img_3.png)|![1](./Gray2Lab/result_50_times/img_4.png)|![1](./Gray2Lab/result_50_times/img_5.png)|![1](./Gray2Lab/result_50_times/img_6.png)|![1](./Gray2Lab/result_50_times/img_7.png)|![1](./Gray2Lab/result_50_times/img_8.png)|![1](./Gray2Lab/result_50_times/img_9.png)
+RGB (1000 times)|![1](./Gray2Lab/result_50_times/img_0.png) |![2](./Gray2Lab/result_50_times/img_1.png)|![3](./Gray2Lab/result_50_times/img_2.png)|![4](./Gray2Lab/result_50_times/img_3.png)|![1](./Gray2Lab/result_50_times/img_4.png)|![1](./Gray2Lab/result_50_times/img_5.png)|![1](./Gray2Lab/result_50_times/img_6.png)|![1](./Gray2Lab/result_50_times/img_7.png)|![1](./Gray2Lab/result_50_times/img_8.png)|![1](./Gray2Lab/result_50_times/img_9.png)
+
+## Improvement in the future 
+
+1) The performance of classfier can be improved in the future, more high quality samples and training times will improve the performance. Using the classify network trained by google is a potential way to improve.
+
+2) Loss function is another thing that can be improved. Current loss function is "MSE", "MAE". Considering the unsupervised network loss and the classification loss.
+
+3) CNN topological structures and inner parameters can be improved by using  optimization algorithm.
