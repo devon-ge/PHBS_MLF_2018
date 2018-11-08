@@ -93,9 +93,13 @@ RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_ex
 ### Build CNN model based on Keras
 
 * The picture below shows the process of some popular optimizers intuitively. (eg. SGD, Momentum, NAG, Adagrad, Adadelta, Rmsprop)
-* In our model, we use Rmsprop method ,which is an adaptive learning rate method and proposed by Geoff Hinton.
+* In our model, we use Rmsprop method, which is an adaptive learning rate method and proposed by Geoff Hinton.
 
 ![example1](./test/optimizer.gif)
+
+* Below (right) shows the optimization process.
+
+![loss](/Gray2Lab/loss.png)
 
 ### Result
 
