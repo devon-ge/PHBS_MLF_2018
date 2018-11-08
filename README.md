@@ -74,11 +74,11 @@ We use PCA score of RGB to represent each picture and then use k-means to cluste
 
 ### Color channels conversion
 
-By the implementation of `keras`, pictures are loaded in two channels (colorful and gray).  To reduce computational intensity and improve the efficiency of the model, the pictures are compressed. Below are details of the conversion processes.
+First, to reduce computational intensity and improve the efficiency of the model, RGB images are resized to 256 by 256. Then, we convert the image format from `RGB` to `Lab`. Below are details of the conversion process.
 
-* Convert the color channel of images from `RGB` to `Lab`. In `Lab` format, `L` is lightness, ranging from 0(black) to 100(white), `a` is the green/red channel, ranging from -128 to 127, and `b` is the blue/yellow channel, ranging from -128 to 127. The conversion from `RGB` to `Lab` is invertible. It is easier to train two color channels in Lab than three channels in RGB, and `a` and `b` are uncorrelated.
+* Convert color channels of images from `RGB` to `Lab`. In `Lab` format, `L` is lightness, ranging from 0(black) to 100(white), `a` is the green/red channel, ranging from -128 to 127, and `b` is the blue/yellow channel, ranging from -128 to 127. The conversion from `RGB` to `Lab` is invertible. It is easier to train two color channels in Lab than three channels in RGB, and `a` and `b` are uncorrelated.
 
-* The neuron network use the gray pictures as the input, and the colorful output. Both the input and output are compressed into 256 by 256 images.
+* The convolution neural network inputs grayscale images (images with the L channel), and outputs the other two color channels, i.e., a and b. Then, L, a, and b are concatenate together, and full color images are retrieved. Last, images are converted from `Lab` back to `RGB`.
 
 :octocat:|Raw|Compressed (width=256 px)
 ---|---|---
