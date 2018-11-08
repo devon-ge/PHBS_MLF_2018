@@ -89,7 +89,9 @@ RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_ex
 
 ## Neural network training
 
-### CNN topological structures
+### CNN structure
+![CNN structure](test/CNN_structure.png)
+
 
 ### Build CNN model based on Keras
 
