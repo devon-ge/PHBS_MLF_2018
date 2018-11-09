@@ -90,8 +90,8 @@ RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_ex
 ## Neural network training
 
 ### CNN structure
-![CNN structure](test/CNN_Structure.png)
 
+![CNN structure](test/CNN_Structure.png)
 
 ### Build CNN model based on Keras
 
@@ -113,11 +113,14 @@ After we train the model, the following pictures shows the colorizing result. It
 Gray|![1](./Gray2Lab/result_gray/img_0.png) |![2](./Gray2Lab/result_gray/img_1.png)|![3](./Gray2Lab/result_gray/img_2.png)|![4](./Gray2Lab/result_gray/img_3.png)|![1](./Gray2Lab/result_gray/img_4.png)|![1](./Gray2Lab/result_gray/img_5.png)|![1](./Gray2Lab/result_gray/img_6.png)|![1](./Gray2Lab/result_gray/img_7.png)|![1](./Gray2Lab/result_gray/img_8.png)|![1](./Gray2Lab/result_gray/img_9.png)
 RGB (50 times)|![1](./Gray2Lab/result_50_times/img_0.png) |![2](./Gray2Lab/result_50_times/img_1.png)|![3](./Gray2Lab/result_50_times/img_2.png)|![4](./Gray2Lab/result_50_times/img_3.png)|![1](./Gray2Lab/result_50_times/img_4.png)|![1](./Gray2Lab/result_50_times/img_5.png)|![1](./Gray2Lab/result_50_times/img_6.png)|![1](./Gray2Lab/result_50_times/img_7.png)|![1](./Gray2Lab/result_50_times/img_8.png)|![1](./Gray2Lab/result_50_times/img_9.png)
 RGB (1000 times)|![1](./Gray2Lab/result_rgb/img_0.png) |![2](./Gray2Lab/result_rgb/img_1.png)|![3](./Gray2Lab/result_rgb/img_2.png)|![4](./Gray2Lab/result_rgb/img_3.png)|![1](./Gray2Lab/result_rgb/img_4.png)|![1](./Gray2Lab/result_rgb/img_5.png)|![1](./Gray2Lab/result_rgb/img_6.png)|![1](./Gray2Lab/result_rgb/img_7.png)|![1](./Gray2Lab/result_rgb/img_8.png)|![1](./Gray2Lab/result_rgb/img_9.png)
-RGB (1000 times)|![1](./images/test1/e4ddee715ad3e89e02ce705bd79eb75515115031.jpg) |![2](./images/test1/e55e357725603349c61d2760738fde41e9dce196.jpg)|![3](./images/test1/e8e9bbcd94ed1b011456d4560e24bdd9fef995a6.jpg)|![4](./images/test1/ee693c631afc69f3314a67f1c38573e290d20d12.jpg)|![1](./images/test1/efde62f1219af53549c32f4d303a93afba684020.jpg)|![1](./images/test1/f01d30750b0b5ef78bd0e835e8713ff461f42f70.jpg)|![1](./images/test1/f0748fe286f542b976c03f5aa81ef1f8d2c9a0ff.jpg)|![1](./images/test1/f30e5fda9409e6fd4f263f6a77f6878f09504104.jpg)|![1](./images/test1/f76a42e869ef9f4ee547f45e78f52e20b102b9b2.jpg)|![1](./images/test1/ff892b1cf137703a71201a2444645e074c826b5e.jpg)
+RGB (Original)|![1](./images/test1/e4ddee715ad3e89e02ce705bd79eb75515115031.jpg) |![2](./images/test1/e55e357725603349c61d2760738fde41e9dce196.jpg)|![3](./images/test1/e8e9bbcd94ed1b011456d4560e24bdd9fef995a6.jpg)|![4](./images/test1/ee693c631afc69f3314a67f1c38573e290d20d12.jpg)|![1](./images/test1/efde62f1219af53549c32f4d303a93afba684020.jpg)|![1](./images/test1/f01d30750b0b5ef78bd0e835e8713ff461f42f70.jpg)|![1](./images/test1/f0748fe286f542b976c03f5aa81ef1f8d2c9a0ff.jpg)|![1](./images/test1/f30e5fda9409e6fd4f263f6a77f6878f09504104.jpg)|![1](./images/test1/f76a42e869ef9f4ee547f45e78f52e20b102b9b2.jpg)|![1](./images/test1/ff892b1cf137703a71201a2444645e074c826b5e.jpg)
+
 ## Improvement in the future
 
-1) The performance of classfier can be improved in the future, more high quality samples and training times will improve the performance. Using the classify network trained by google is a potential way to improve.
+1. The performance of classfier can be improved in the future, more high quality samples and training times will improve the performance. Using the classify network trained by google is a potential way to improve.
 
-2) Loss function is another thing that can be improved. Current loss function is "MSE", "MAE". Considering the unsupervised network loss and the classification loss.
+2. Loss function is another thing that can be improved. Current loss function is "MSE", "MAE". Considering the unsupervised network loss and the classification loss.
 
-3) CNN topological structures and inner parameters can be improved by using  optimization algorithm.
+3. CNN topological structures and inner parameters can be improved by using  optimization algorithm.
+
+4. In order to get a better performance, we can add mannual operations (eg. mark some pixs with specific colour which is decided by human and so on)
