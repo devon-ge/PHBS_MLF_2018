@@ -124,3 +124,7 @@ RGB (Original)|![1](./images/test1/e4ddee715ad3e89e02ce705bd79eb75515115031.jpg)
 3. CNN topological structures and inner parameters can be improved by using  optimization algorithm.
 
 4. In order to get a better performance, we can add mannual operations (eg. mark some pixs with specific colour which is decided by human and so on)
+
+## Reference
+
+Zhang, R., Isola, P., & Efros, A. A. (2016, October). Colorful image colorization. In European Conference on Computer Vision (pp. 649-666). Springer, Cham.
