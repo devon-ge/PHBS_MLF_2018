@@ -62,15 +62,15 @@ omit the `CLOSESPIDER_ITEMCOUNT` option. That's time consuming!
 
 Below are some examples:
 
-![example1](images/full/0a3f8ee9153997c651b82989799800d50a462dbd.jpg) ![example2](images/full/fb5f301c86b8e948cdb68a2e273fea24cdb8cdb1.jpg)
+![example1](images/full/3d653a61eb0a12562e17636b17144418097b8af1.jpg) ![example2](images/full/fb5f301c86b8e948cdb68a2e273fea24cdb8cdb1.jpg)
 
-![example3](images/full/1d7de482b2f5359371ffd10a551ad07a3d86246b.jpg) ![example4](images/full/2d773493dc2415b631a66adc135e86c88e88fc03.jpg)
+![example3](images/full/6cc751a4d4cde64e164df5a93b3df2ccceaef38c.jpg) ![example4](images/full/2d773493dc2415b631a66adc135e86c88e88fc03.jpg)
 
 ### A simple classifier
 
 Once we get the data (images), we can start training the neuron network. To improve the accuray, we first build a classifier to classify pictures. For example, mountains and rivers pictures should be divided into separated groups. In this way, the model captures category-dependent features and thus should theoretically perform better than mixed training.
 
-We use PCA score of RGB to represent each picture and then use k-means to cluster those images. Each time we will pick one group to create the trainning and test set. Thus make sure trainning and test images are similar to a certain degree without the extra effort of classification by human.
+We use PCA score of RGB to represent each picture and then use k-means to cluster those images. Each time we will pick one group to create the trainning and test set. Thus make sure trainning and test images are similar to a certain degree without the extra effort of classification by human. In the end we train our model with 110 samples in [`images/full`](images/full).
 
 ### Color channels conversion
 
@@ -85,9 +85,11 @@ First, to reduce computational intensity and improve the efficiency of the model
 Gray|![Raw picture](./test/example_Gray.jpg) | ![Compressed picture](./test/com_example_Gray.jpg)
 RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_example_RGB.jpg)
 
-* Images are divided into test sets and training sets by a certain proportion.
+* Images are divided into test sets and training sets by a certain proportion. In this project, both training set and test set are standardized pictures. [`images/full1`](images/full1) contains 110 training samples (standardized from [`images/full`](images/full) ). [`images/test1`](images/test1) contains 10 test samples (standardized from [`images/test`](images/test))
 
 ## Neural network training
+
+We use a complicated neural network that contains more than 10 layers. In the first half layers, we decompose a standardized picture into small ones (pixels decomposition). The minimal unit is 32 by 32 object. The other half layers return the original size by upsampling. The activation function in the hidden layers is `ReLU`. Below is the flowchart of how this neural network works.
 
 ### CNN structure
 
@@ -100,22 +102,28 @@ RGB|![Raw picture](./test/example_RGB.jpg) | ![Compressed picture](./test/com_ex
 
 ![example1](./test/optimizer.gif)
 
-* Below (right) shows the optimization process.
+### Result
+
+The following table shows the colorizing result with different training epochs. The coloraziton is evidently better when we increase the trainning times. The difference between 1000-epoch model and 2000-epoch model is subtle. When increasing the epoch to 5000, the model yields less error compared to the 2000-epoch one. The colorization difference between 2000-epoch and 5000-epoch, however, is negligible. The model in run on Windows 7 ultimate with GTX 1080 Ti.
+
+Epoch|1|2|3|4|5|6|7|8|9|10
+---|---|---|---|---|---|---|---|---|---|---
+Gray|![1](./Gray2Lab/result_gray/img_0.png) |![2](./Gray2Lab/result_gray/img_1.png)|![3](./Gray2Lab/result_gray/img_2.png)|![4](./Gray2Lab/result_gray/img_3.png)|![1](./Gray2Lab/result_gray/img_4.png)|![1](./Gray2Lab/result_gray/img_5.png)|![1](./Gray2Lab/result_gray/img_6.png)|![1](./Gray2Lab/result_gray/img_7.png)|![1](./Gray2Lab/result_gray/img_8.png)|![1](./Gray2Lab/result_gray/img_9.png)
+50|![1](./Gray2Lab/result_50_times/img_0.png) |![2](./Gray2Lab/result_50_times/img_1.png)|![3](./Gray2Lab/result_50_times/img_2.png)|![4](./Gray2Lab/result_50_times/img_3.png)|![1](./Gray2Lab/result_50_times/img_4.png)|![1](./Gray2Lab/result_50_times/img_5.png)|![1](./Gray2Lab/result_50_times/img_6.png)|![1](./Gray2Lab/result_50_times/img_7.png)|![1](./Gray2Lab/result_50_times/img_8.png)|![1](./Gray2Lab/result_50_times/img_9.png)
+1000|![1](./Gray2Lab/result_1000/img_0.png) |![2](./Gray2Lab/result_1000/img_1.png)|![3](./Gray2Lab/result_1000/img_2.png)|![4](./Gray2Lab/result_1000/img_3.png)|![1](./Gray2Lab/result_1000/img_4.png)|![1](./Gray2Lab/result_1000/img_5.png)|![1](./Gray2Lab/result_1000/img_6.png)|![1](./Gray2Lab/result_1000/img_7.png)|![1](./Gray2Lab/result_1000/img_8.png)|![1](./Gray2Lab/result_1000/img_9.png)
+2000|![1](./Gray2Lab/result_2000/img_0.png) |![2](./Gray2Lab/result_2000/img_1.png)|![3](./Gray2Lab/result_2000/img_2.png)|![4](./Gray2Lab/result_2000/img_3.png)|![1](./Gray2Lab/result_2000/img_4.png)|![1](./Gray2Lab/result_2000/img_5.png)|![1](./Gray2Lab/result_2000/img_6.png)|![1](./Gray2Lab/result_2000/img_7.png)|![1](./Gray2Lab/result_2000/img_8.png)|![1](./Gray2Lab/result_2000/img_9.png)
+5000|![1](./Gray2Lab/result_5000/img_0.png) |![2](./Gray2Lab/result_5000/img_1.png)|![3](./Gray2Lab/result_5000/img_2.png)|![4](./Gray2Lab/result_5000/img_3.png)|![1](./Gray2Lab/result_5000/img_4.png)|![1](./Gray2Lab/result_5000/img_5.png)|![1](./Gray2Lab/result_5000/img_6.png)|![1](./Gray2Lab/result_5000/img_7.png)|![1](./Gray2Lab/result_5000/img_8.png)|![1](./Gray2Lab/result_5000/img_9.png)
+Raw|![1](./images/test1/e4ddee715ad3e89e02ce705bd79eb75515115031.jpg) |![2](./images/test1/e55e357725603349c61d2760738fde41e9dce196.jpg)|![3](./images/test1/e8e9bbcd94ed1b011456d4560e24bdd9fef995a6.jpg)|![4](./images/test1/ee693c631afc69f3314a67f1c38573e290d20d12.jpg)|![1](./images/test1/efde62f1219af53549c32f4d303a93afba684020.jpg)|![1](./images/test1/f01d30750b0b5ef78bd0e835e8713ff461f42f70.jpg)|![1](./images/test1/f0748fe286f542b976c03f5aa81ef1f8d2c9a0ff.jpg)|![1](./images/test1/f30e5fda9409e6fd4f263f6a77f6878f09504104.jpg)|![1](./images/test1/f76a42e869ef9f4ee547f45e78f52e20b102b9b2.jpg)|![1](./images/test1/ff892b1cf137703a71201a2444645e074c826b5e.jpg)
+
+The subtle improvement of this CNN model is highly relied on the convergece speed. Below shows the decreasing of loss when the epoch of training increase. After about 1500 epochs of training, the loss implied by this model decreases increasingly slow.
 
 ![loss](/Gray2Lab/loss_2000.png)
 
-### Result
+## Conclusion
 
-After we train the model, the following pictures shows the colorizing result. It shows the gray picture, 50 times trainned result, 1000 times trained result and the original picture. The coloraziton is better when we increase the trainning times.  
+In this project, we develop a convolutional neural network to colorize gray pictures. The CNN models shows efficacy from the perspective of research purpose. The computationally intensive model shows predictably better performance with the increase of training epochs. The improvement, however, diminishes as we increase the epoch. Such effect is evident after about 1500 epochs of training.
 
-:octocat:|1|2|3|4|5|6|7|8|9|10
----|---|---|---|---|---|---|---|---|---|---
-Gray|![1](./Gray2Lab/result_gray/img_0.png) |![2](./Gray2Lab/result_gray/img_1.png)|![3](./Gray2Lab/result_gray/img_2.png)|![4](./Gray2Lab/result_gray/img_3.png)|![1](./Gray2Lab/result_gray/img_4.png)|![1](./Gray2Lab/result_gray/img_5.png)|![1](./Gray2Lab/result_gray/img_6.png)|![1](./Gray2Lab/result_gray/img_7.png)|![1](./Gray2Lab/result_gray/img_8.png)|![1](./Gray2Lab/result_gray/img_9.png)
-RGB (50 times)|![1](./Gray2Lab/result_50_times/img_0.png) |![2](./Gray2Lab/result_50_times/img_1.png)|![3](./Gray2Lab/result_50_times/img_2.png)|![4](./Gray2Lab/result_50_times/img_3.png)|![1](./Gray2Lab/result_50_times/img_4.png)|![1](./Gray2Lab/result_50_times/img_5.png)|![1](./Gray2Lab/result_50_times/img_6.png)|![1](./Gray2Lab/result_50_times/img_7.png)|![1](./Gray2Lab/result_50_times/img_8.png)|![1](./Gray2Lab/result_50_times/img_9.png)
-RGB (1000 times)|![1](./Gray2Lab/result_1000/img_0.png) |![2](./Gray2Lab/result_1000/img_1.png)|![3](./Gray2Lab/result_1000/img_2.png)|![4](./Gray2Lab/result_1000/img_3.png)|![1](./Gray2Lab/result_1000/img_4.png)|![1](./Gray2Lab/result_1000/img_5.png)|![1](./Gray2Lab/result_1000/img_6.png)|![1](./Gray2Lab/result_1000/img_7.png)|![1](./Gray2Lab/result_1000/img_8.png)|![1](./Gray2Lab/result_1000/img_9.png)
-RGB (2000 times)|![1](./Gray2Lab/result_2000/img_0.png) |![2](./Gray2Lab/result_2000/img_1.png)|![3](./Gray2Lab/result_2000/img_2.png)|![4](./Gray2Lab/result_2000/img_3.png)|![1](./Gray2Lab/result_2000/img_4.png)|![1](./Gray2Lab/result_2000/img_5.png)|![1](./Gray2Lab/result_2000/img_6.png)|![1](./Gray2Lab/result_2000/img_7.png)|![1](./Gray2Lab/result_2000/img_8.png)|![1](./Gray2Lab/result_2000/img_9.png)
-RGB (5000 times)|![1](./Gray2Lab/result_5000/img_0.png) |![2](./Gray2Lab/result_5000/img_1.png)|![3](./Gray2Lab/result_5000/img_2.png)|![4](./Gray2Lab/result_5000/img_3.png)|![1](./Gray2Lab/result_5000/img_4.png)|![1](./Gray2Lab/result_5000/img_5.png)|![1](./Gray2Lab/result_5000/img_6.png)|![1](./Gray2Lab/result_5000/img_7.png)|![1](./Gray2Lab/result_5000/img_8.png)|![1](./Gray2Lab/result_5000/img_9.png)
-RGB (Original)|![1](./images/test1/e4ddee715ad3e89e02ce705bd79eb75515115031.jpg) |![2](./images/test1/e55e357725603349c61d2760738fde41e9dce196.jpg)|![3](./images/test1/e8e9bbcd94ed1b011456d4560e24bdd9fef995a6.jpg)|![4](./images/test1/ee693c631afc69f3314a67f1c38573e290d20d12.jpg)|![1](./images/test1/efde62f1219af53549c32f4d303a93afba684020.jpg)|![1](./images/test1/f01d30750b0b5ef78bd0e835e8713ff461f42f70.jpg)|![1](./images/test1/f0748fe286f542b976c03f5aa81ef1f8d2c9a0ff.jpg)|![1](./images/test1/f30e5fda9409e6fd4f263f6a77f6878f09504104.jpg)|![1](./images/test1/f76a42e869ef9f4ee547f45e78f52e20b102b9b2.jpg)|![1](./images/test1/ff892b1cf137703a71201a2444645e074c826b5e.jpg)
+Naturally the limit of loss derives from the trainig set, and the model specificaiton. We argue that model specification accounts for the convergence of loss function with regard to epochs of training. Although large epoch (e.g., 5000) will absolutely yield less loss, it's computationally intensive and beyond ability of the human eye identification, especially in our project. 2000 performs good that balances model predictability and computational intensity.
 
 ## Improvement in the future
 
