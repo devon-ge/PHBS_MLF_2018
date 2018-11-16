@@ -1,7 +1,7 @@
 # Grayscale image colorization
 
-Course project of [Machine Learning for Finance](https://github.com/PHBS/2018.M1.MLF) at [PHBS](http://english.phbs.pku.edu.cn/). This project aims to realize automatic colorization of grayscale images. The
-repository is where we develop algorithms. We welcome contributions if you are interested in our
+Course project of [Machine Learning for Finance](https://github.com/PHBS/2018.M1.MLF) at [PHBS](http://english.phbs.pku.edu.cn/). This project uses convolutional neural network (CNN) to colorize grayscale images. The
+repository is where we develop model and present briefly the result. We welcome contributions if you are interested in our
 project. For example, you can:
 
 * [Submit bugs or issues](https://github.com/devon-ge/PHBS_MLF_2018/issues) to improve the performance of our model.
@@ -113,6 +113,7 @@ After we train the model, the following pictures shows the colorizing result. It
 Gray|![1](./Gray2Lab/result_gray/img_0.png) |![2](./Gray2Lab/result_gray/img_1.png)|![3](./Gray2Lab/result_gray/img_2.png)|![4](./Gray2Lab/result_gray/img_3.png)|![1](./Gray2Lab/result_gray/img_4.png)|![1](./Gray2Lab/result_gray/img_5.png)|![1](./Gray2Lab/result_gray/img_6.png)|![1](./Gray2Lab/result_gray/img_7.png)|![1](./Gray2Lab/result_gray/img_8.png)|![1](./Gray2Lab/result_gray/img_9.png)
 RGB (50 times)|![1](./Gray2Lab/result_50_times/img_0.png) |![2](./Gray2Lab/result_50_times/img_1.png)|![3](./Gray2Lab/result_50_times/img_2.png)|![4](./Gray2Lab/result_50_times/img_3.png)|![1](./Gray2Lab/result_50_times/img_4.png)|![1](./Gray2Lab/result_50_times/img_5.png)|![1](./Gray2Lab/result_50_times/img_6.png)|![1](./Gray2Lab/result_50_times/img_7.png)|![1](./Gray2Lab/result_50_times/img_8.png)|![1](./Gray2Lab/result_50_times/img_9.png)
 RGB (1000 times)|![1](./Gray2Lab/result_rgb/img_0.png) |![2](./Gray2Lab/result_rgb/img_1.png)|![3](./Gray2Lab/result_rgb/img_2.png)|![4](./Gray2Lab/result_rgb/img_3.png)|![1](./Gray2Lab/result_rgb/img_4.png)|![1](./Gray2Lab/result_rgb/img_5.png)|![1](./Gray2Lab/result_rgb/img_6.png)|![1](./Gray2Lab/result_rgb/img_7.png)|![1](./Gray2Lab/result_rgb/img_8.png)|![1](./Gray2Lab/result_rgb/img_9.png)
+RGB (5000 times)|![1](./Gray2Lab/result_5000/img_0.png) |![2](./Gray2Lab/result_5000/img_1.png)|![3](./Gray2Lab/result_5000/img_2.png)|![4](./Gray2Lab/result_5000/img_3.png)|![1](./Gray2Lab/result_5000/img_4.png)|![1](./Gray2Lab/result_5000/img_5.png)|![1](./Gray2Lab/result_5000/img_6.png)|![1](./Gray2Lab/result_5000/img_7.png)|![1](./Gray2Lab/result_5000/img_8.png)|![1](./Gray2Lab/result_5000/img_9.png)
 RGB (Original)|![1](./images/test1/e4ddee715ad3e89e02ce705bd79eb75515115031.jpg) |![2](./images/test1/e55e357725603349c61d2760738fde41e9dce196.jpg)|![3](./images/test1/e8e9bbcd94ed1b011456d4560e24bdd9fef995a6.jpg)|![4](./images/test1/ee693c631afc69f3314a67f1c38573e290d20d12.jpg)|![1](./images/test1/efde62f1219af53549c32f4d303a93afba684020.jpg)|![1](./images/test1/f01d30750b0b5ef78bd0e835e8713ff461f42f70.jpg)|![1](./images/test1/f0748fe286f542b976c03f5aa81ef1f8d2c9a0ff.jpg)|![1](./images/test1/f30e5fda9409e6fd4f263f6a77f6878f09504104.jpg)|![1](./images/test1/f76a42e869ef9f4ee547f45e78f52e20b102b9b2.jpg)|![1](./images/test1/ff892b1cf137703a71201a2444645e074c826b5e.jpg)
 
 ## Improvement in the future
