@@ -102,6 +102,8 @@ We use a complicated neural network that contains more than 10 layers. In the fi
 
 ![example1](./test/optimizer.gif)
 
+*Source*: [*CS231n*](http://cs231n.github.io/neural-networks-3/)
+
 ### Result
 
 The following table shows the colorizing result with different training epochs. The coloraziton is evidently better when we increase the trainning times. The difference between 1000-epoch model and 2000-epoch model is subtle. When increasing the epoch to 5000, the model yields less error compared to the 2000-epoch one. The colorization difference between 2000-epoch and 5000-epoch, however, is negligible. The model in run on Windows 7 ultimate with GTX 1080 Ti.
