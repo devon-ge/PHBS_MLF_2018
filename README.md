@@ -95,6 +95,8 @@ We use a complicated neural network that contains more than 10 layers. In the fi
 
 ![CNN structure](test/CNN_Structure.png)
 
+For a trial version of incorporating part of ResNet18 into the CNN for automatic colorization, please visit (https://github.com/SuperWGAaron/MLF_Grayscale_Image_Colorization).
+
 ### Build CNN model based on Keras
 
 * The picture below shows the process of some popular optimizers intuitively. (eg. SGD, Momentum, NAG, Adagrad, Adadelta, Rmsprop)
