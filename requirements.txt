@@ -1,7 +1,7 @@
 ﻿Keras==2.2.4
 matplotlib==3.0.3
 numpy==1.16.3
-Pillow==9.0.1
+Pillow==10.2.0
 pandas==0.24.2
 Scrapy==2.6.2
 scikit-image==0.15.0
